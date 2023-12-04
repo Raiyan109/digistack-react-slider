@@ -1,34 +1,67 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import './styles.css'
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import img1 from '../src/assets/blog-1.png'
+import img2 from '../src/assets/blog-2.png'
+import img3 from '../src/assets/blog-3.png'
+import SwiperArrowButtons from './components/SwiperArrowButtons';
+import RegSwiper from './components/RegSwiper';
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className='container'>
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        // loop={true}
+
+        coverflowEffect={{
+          rotate: 0,
+          stretch: -50,
+          scale: 1,
+          depth: 100,
+          modifier: 2,
+          slideShadows: true,
+        }}
+        // pagination={true}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="mySwiper"
+      >
+        <SwiperArrowButtons />
+        <SwiperSlide>
+          <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-5.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-6.jpg" />
+        </SwiperSlide>
+
+      </Swiper>
+
+      <RegSwiper />
+    </div>
   )
 }
 
