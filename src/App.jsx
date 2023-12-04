@@ -1,25 +1,59 @@
 import './App.css'
-import './styles.css'
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect, useRef } from "react";
 
+import './styles.css'
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import SwiperArrowButtons from './components/SwiperArrowButtons';
+import RegSwiper from './components/RegSwiper';
 import img1 from '../src/assets/blog-1.png'
 import img2 from '../src/assets/blog-2.png'
 import img3 from '../src/assets/blog-3.png'
-import SwiperArrowButtons from './components/SwiperArrowButtons';
-import RegSwiper from './components/RegSwiper';
 
 function App() {
+  const swiperRef = useRef(null);
 
+  useEffect(() => {
+    const swiperContainer = swiperRef.current;
+    const params = {
+      navigation: true,
+      pagination: true,
+      // These are new...
+      injectStyles: [
+        `
+            .swiper-button-next,
+            .swiper-button-prev {
+              background-color: white;
+              padding: 8px 16px;
+              border-radius: 100%;
+              border: 2px solid black;
+              color: red;
+              position:relative;
+              top:-300px;
+              right:0;
+            }
+            .swiper-pagination-bullet{
+              width: 40px;
+              height: 40px;
+              background-color: red;
+            }
+        `,
+      ],
+    };
+
+    Object.assign(swiperContainer, params);
+    // swiperContainer.initialize();
+  }, []);
 
   return (
     <div className='container'>
       <Swiper
+        ref={swiperRef} init="false"
         effect={'coverflow'}
         grabCursor={true}
         centeredSlides={true}
@@ -38,15 +72,26 @@ function App() {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperArrowButtons />
+        <div className='swiper-content-wrapper'>
+          <div className='swiper-header-wrapper'>
+            <h1 style={{ fontSize: '40px', textTransform: 'uppercase', color: 'black', fontWeight: 'normal' }}>Comprehensive interior </h1>
+            <h1 style={{ fontSize: '40px', textTransform: 'uppercase', color: 'black', fontWeight: 'bolder' }}>design services</h1>
+          </div>
+          <div>
+            <SwiperArrowButtons />
+          </div>
+        </div>
         <SwiperSlide>
           <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <p className='swiper-p'>Residential interior design</p>
         </SwiperSlide>
         <SwiperSlide>
           <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <p className='swiper-p'>Space planning and layout</p>
         </SwiperSlide>
         <SwiperSlide>
           <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <p className='swiper-p'>Royal bedroom</p>
         </SwiperSlide>
         <SwiperSlide>
           <img className='swiper-img' src="https://swiperjs.com/demos/images/nature-4.jpg" />
@@ -60,7 +105,7 @@ function App() {
 
       </Swiper>
 
-      <RegSwiper />
+
     </div>
   )
 }

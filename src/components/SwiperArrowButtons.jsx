@@ -4,11 +4,11 @@ const SwiperArrowButtons = () => {
     const swiper = useSwiper();
 
     return (
-        <div className="swiper-nav-btns">
-            <button onClick={() => swiper.slidePrev()}>
+        <div className="">
+            <button className="swiper-nav-btns1" onClick={() => swiper.slidePrev()}>
                 <FaArrowLeft />
             </button>
-            <button onClick={() => swiper.slideNext()}>
+            <button className="swiper-nav-btns2" onClick={() => swiper.slideNext()}>
                 <FaArrowRight />
             </button>
         </div>
