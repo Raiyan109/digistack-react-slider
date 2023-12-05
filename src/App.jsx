@@ -16,6 +16,7 @@ import img2 from '../src/assets/blog-2.png'
 import img3 from '../src/assets/blog-3.png'
 import Swiper1 from './components/Swiper1';
 import Swiper2 from './components/Swiper2';
+import SwipPractice from './components/SwipPractice';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '50px' }}>
       <Swiper1 />
       <Swiper2 />
+      {/* <SwipPractice /> */}
     </div>
   )
 }

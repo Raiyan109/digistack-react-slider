@@ -35,6 +35,11 @@
     border-radius: 10px;
 }
 
+.in-active {
+    height: 450px !important;
+    border-radius: 50%;
+}
+
 .swiper-nav-btns1 {
     display: flex;
     justify-content: space-between;
@@ -103,7 +108,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 190px;
-}
 
-.swiper-header-wrapper {}
+}

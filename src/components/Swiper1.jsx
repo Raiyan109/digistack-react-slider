@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
+import { Navigation, EffectCoverflow } from "swiper/modules";
 import SwiperArrowButtons from './SwiperArrowButtons';
 import { useEffect, useRef } from 'react';
 
@@ -47,7 +47,7 @@ const Swiper1 = () => {
         <div className='container'>
             <Swiper
                 ref={swiperRef}
-                init="false"
+                // init="false"
                 effect={'coverflow'}
                 grabCursor={true}
                 centeredSlides={true}
@@ -60,10 +60,9 @@ const Swiper1 = () => {
                     scale: 1,
                     depth: 100,
                     modifier: 2,
-                    slideShadows: true,
                 }}
                 // pagination={true}
-                modules={[EffectCoverflow, Pagination, Navigation]}
+                modules={[EffectCoverflow, Navigation]}
                 className="mySwiper"
             >
                 <div className='swiper-content-wrapper'>
