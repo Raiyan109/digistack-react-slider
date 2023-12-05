@@ -22,7 +22,7 @@ function App() {
 
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '50px' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '100px' }}>
       <Swiper1 />
       <Swiper2 />
       {/* <SwipPractice /> */}

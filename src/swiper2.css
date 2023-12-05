@@ -1,9 +1,9 @@
 .container {
     position: relative;
     height: 100%;
-    /* margin: 0 auto;
-    padding: 0 4em;
-    overflow: hidden; */
+    /* margin: 0 auto; */
+    /* padding: 0 4em; */
+    /* overflow: hidden; */
 }
 
 .swiper {
@@ -11,7 +11,7 @@
     padding-top: 50px;
     padding-bottom: 50px;
     position: relative;
-    background-color: blue;
+    /* background-color: blue; */
     height: 800px;
 }
 
@@ -22,8 +22,9 @@
     /* background-color: rebeccapurple; */
     padding-bottom: 100px;
     margin-top: 50px;
-    overflow: hidden;
-    background: red;
+    transition-duration: all 0.5s;
+    /* overflow: hidden; */
+    /* background: red; */
 }
 
 .swiper-slide {
@@ -31,6 +32,7 @@
     background-size: cover;
     width: 300px;
     height: 300px;
+    /* padding: 50px 50px; */
 }
 
 .swiper-slide img {
@@ -53,14 +55,27 @@
     text-transform: uppercase;
 }
 
-.swiper-content-wrapper {
+.swiper2-content-wrapper {
     position: absolute;
-    top: -20px;
+    top: -70px;
     left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 190px;
+    padding: 20px 20px;
+    text-wrap: wrap;
+    line-height: normal;
 }
 
-.swiper-header-wrapper {}
+.swiper2-header-wrapper {
+    margin-top: 60px;
+
+}
+
+.swiper2-paragraph {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 550px;
+}
