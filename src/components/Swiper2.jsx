@@ -55,7 +55,7 @@ const Swiper2 = () => {
                 // watchSlidesProgress={true}
                 slidesPerView={2}
                 // loop={true}
-
+                spaceBetween={30}
 
                 coverflowEffect={{
                     rotate: 0,
