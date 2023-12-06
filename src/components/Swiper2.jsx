@@ -2,59 +2,22 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 import Swiper2Button from './Swiper2Button';
 
+import '../swiper2.css'
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import '../swiper2.css'
 
 import img1 from '../assets/blog-1.png'
 
 const Swiper2 = () => {
-    // const swiperRef = useRef(null);
 
-    // useEffect(() => {
-    //     const swiperContainer = swiperRef.current;
-    //     const params = {
-    //         navigation: true,
-    //         pagination: true,
-    //         // These are new...
-    //         injectStyles: [
-    //             `
-    //         .swiper-button-next,
-    //         .swiper-button-prev {
-    //           background-color: white;
-    //           padding: 8px 16px;
-    //           border-radius: 100%;
-    //           border: 2px solid black;
-    //           color: red;
-    //           position:relative;
-    //           top:-300px;
-    //           right:0;
-    //         }
-    //         .swiper-pagination-bullet{
-    //           width: 40px;
-    //           height: 40px;
-    //           background-color: red;
-    //         }
-    //     `,
-    //         ],
-    //     };
-
-    //     Object.assign(swiperContainer, params);
-    //     // swiperContainer.initialize();
-    // }, []);
     return (
         <div className='container'>
             <Swiper
-                // ref={swiperRef}
-                // init="false"
                 effect={'coverflow'}
                 grabCursor={true}
-                // centeredSlides={true}
-                // watchSlidesProgress={true}
                 slidesPerView={2}
-                // loop={true}
                 spaceBetween={30}
 
                 coverflowEffect={{
@@ -65,7 +28,6 @@ const Swiper2 = () => {
                     modifier: 2,
                     slideShadows: false,
                 }}
-                // pagination={true}
                 modules={[EffectCoverflow, Pagination, Navigation]}
                 className=""
             >
